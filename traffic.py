@@ -10,13 +10,15 @@ import json
 width=400
 height=250
 def location(place):
-    geocoderApi = herepy.GeocoderApi('fywUFbdwhP7YRn5SZI2A-ZJ7te444T2vt3X5GWnveAE')
+    geocoderApi = herepy.GeocoderApi('uHwrUg_Q32zLK6cvaXY9anp9itaESPMDAY6p1qhy59M')
     response = geocoderApi.free_form(place)
+    print(response)
     s=json.loads(str(response))
 
 
-    lat = s["Response"]["View"][0]["Result"][0]["Location"]["DisplayPosition"]["Latitude"]
-    lng = s["Response"]["View"][0]["Result"][0]["Location"]["DisplayPosition"]["Longitude"]
+    # Extract latitude and longitude from the correct path in the JSON response
+    lat = s["items"][0]["position"]["lat"]
+    lng = s["items"][0]["position"]["lng"]
     lat="{0:.2f}".format(lat)
     lng="{0:.2f}".format(lng)
     return '{'+lat+','+lng+'}'
@@ -40,7 +42,7 @@ class Traffic(Toplevel):
     def initUI(self,path,pic,xi,yi):
         stgImg=Image.open(str((path-1)*5)+"//"+str(pic)+".jpg")
         # paths="/home/iamrishav/PycharmProjects/HelloWorld/0"
-        stgImg=stgImg.resize((width,height),Image.ANTIALIAS)
+        stgImg=stgImg.resize((width,height),Image.LANCZOS)
         stgImg2=ImageTk.PhotoImage(stgImg)
         # frame=Frame(master,height=800)
         # frame.pack(fill=X)

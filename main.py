@@ -38,7 +38,7 @@ class Application(object):
         self.password = Label(self.bottomFrame, text="PASSWORD:", font="arial 11 bold", bg="#f0eec5", fg="black")
         self.password.place(x=550, y=240)
         image = Image.open('picture.png')
-        image = image.resize((150, 150), Image.ANTIALIAS)
+        image = image.resize((150, 150), Image.LANCZOS)
         img_pro = ImageTk.PhotoImage(image)
         self.label_pic = Label(self.bottomFrame,image=img_pro,background="#f0eec5")
         self.label_pic.image = img_pro
