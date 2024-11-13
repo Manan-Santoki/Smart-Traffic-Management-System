@@ -64,13 +64,13 @@ class Application(object):
             there = Traffic()
 
 
-# class newWindow(object):
-#     def __init__(self, master):
-#         object.__init__(self)
-#         w, h = object.winfo_screenwidth(), object.winfo_screenheight()
-#         object.geometry("%dx%d+0+0" % (w, h))
-#         object.mainloop()
-#         w, h = object.winfo_screenwidth(), object.winfo_screenheight()
+class newWindow(object):
+    def __init__(self, master):
+        object.__init__(self)
+        w, h = object.winfo_screenwidth(), object.winfo_screenheight()
+        object.geometry("%dx%d+0+0" % (w, h))
+        object.mainloop()
+        w, h = object.winfo_screenwidth(), object.winfo_screenheight()
 
 
 def main(master):

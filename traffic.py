@@ -22,7 +22,18 @@ def location(place):
     lat="{0:.2f}".format(lat)
     lng="{0:.2f}".format(lng)
     return '{'+lat+','+lng+'}'
-d={1:"Big Ben  "+location("Big Ben"), 2:"Gariahat  "+location("Gariahat"),3:"Jadavpur  "+location("Jadavpur"),4:"Times Square  "+location("Times Square"),5:"Rasbehari  "+location("Rasbehari"),6:"Garia  "+location("Garia"),7:"Tollygunge  "+location("Tollygunge"),8:"Chingrihata  "+location("Chingrihata"),9:"Saltlake  "+location("Salt Lake")}
+# Dictionary using the updated location function
+d = {
+    1: "Big Ben  " + location("Big Ben"),
+    2: "Gariahat  " + location("Gariahat"),
+    3: "Jadavpur  " + location("Jadavpur"),
+    4: "Times Square  " + location("Times Square"),
+    5: "Rasbehari  " + location("Rasbehari"),
+    6: "Garia  " + location("Garia"),
+    7: "Tollygunge  " + location("Tollygunge"),
+    8: "Chingrihata  " + location("Chingrihata"),
+    9: "Saltlake  " + location("Salt Lake")
+}
 
 
 
@@ -75,13 +86,13 @@ class Traffic(Toplevel):
         self.update_idletasks()
 
 
-# root = Tk()
-# root.title("Traffic")
-# root.configure(background="#f0eec5")
-# root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
-# initUI(root,1,1,1,1)
-# for i in range(1,3):
-#     for j in range(1,10):
-#         initUI(root,i,j,(j-1)%3 +1,(j-1)//3 +1)
-#     time.sleep(3)
-# root.mainloop()
+    root = Tk()
+    root.title("Traffic")
+    root.configure(background="#f0eec5")
+    root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenheight()))
+    initUI(root,1,1,1,1)
+    for i in range(1,3):
+        for j in range(1,10):
+            initUI(root,i,j,(j-1)%3 +1,(j-1)//3 +1)
+        time.sleep(3)
+    root.mainloop()
